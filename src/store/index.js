@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import router from '@/router';
 
 export default createStore({
   state: {
@@ -42,7 +43,7 @@ export default createStore({
       state.validContrasena = false;
       //La contraseña debe tener entre 6 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
       //Puede tener otros símbolos.
-      state.mensajeContrasena = "La contraseña debe tener 6 o más caracteres alfanuméricos";
+      state.mensajeContrasena = "La contraseña debe tener 6 o más caracteres alfanuméricos, mayúsculas y minúsculas.";
 
     } else {
       state.validContrasena=true;
@@ -75,7 +76,7 @@ export default createStore({
         
     } else if ( state.contrasena.length<6 || !state.regAN.test(state.contrasena))  {
       state.validContrasena = false;
-      state.mensajeContrasena = "La contraseña debe tener 6 o más caracteres alfanuméricos.";
+      state.mensajeContrasena = "La contraseña debe tener 6 o más caracteres alfanuméricos, mayúsculas y minúsculas.";
       formValido=false;
 
     } else {
@@ -90,6 +91,7 @@ export default createStore({
           state.usermail = "";
           state.validMail = null;
           state.validContrasena = null;
+          router.push({name:'home'});//Redirecciona al inicio
         },2000);
       
     } else {// No procesa

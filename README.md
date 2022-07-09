@@ -1,4 +1,5 @@
-# base-auth
+# Base-JSAuth
+Vue-cli, Bootstrap 5, Vue-router, Vuex, Javascript validation with Regex, API Options.
 
 ## Project setup
 ```

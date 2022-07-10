@@ -69,7 +69,8 @@ export default {
       this.$store.commit('validaContrasena');
     },
     submitForm() {
-      this.$store.commit('submitForm');
+      this.$store.dispatch('submitForm')
+      //this.$store.commit('submitForm');
     },
     setLogout() {
       this.$store.commit('setLogout');
